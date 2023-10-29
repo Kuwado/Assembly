@@ -1,0 +1,14 @@
+.text
+li $s1, -20
+li $s2, 30
+start:
+li $t0,0 # Khong tran so
+addu $s3,$s1,$s2 # s3 = s1 + s2
+xor $t1,$s1,$s2 # Kiem tra dau cua $s1 va $s2
+bltz $t1,EXIT # Neu khac -> EXIT
+xor $t2, $s3, $s1 # Kiem tra dau cua $s3 va $s1
+bltz $t2, OVERFLOW # Neu khac -> tran so
+j EXIT
+OVERFLOW:
+li $t0,1 # Tran so
+EXIT:

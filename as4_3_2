@@ -1,0 +1,3 @@
+.text
+li $s1, 57            # load gia tri $s1 = 57
+addu $s0, $s1, $zero  # Chuyen gia tri $s0 = $1 + 0

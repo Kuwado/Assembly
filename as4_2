@@ -1,0 +1,6 @@
+.text
+li   $s0, 0x12345678           # Load gia tri cho s0
+andi $t0, $s0, 0xff000000      # Trich xuat MSB cua s0
+andi $t1, $s0, 0xffffff00      # Xoa LSB cuar s0
+ori  $t2, $s0, 0xff            # Chuyen 8 bit cuoi cua s0 sang 1
+ori  $t3, $s0, 0x00000000      # Dua s0 ve 0 ($s0=0)

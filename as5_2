@@ -1,0 +1,37 @@
+.data
+h1: .asciiz "The sum of "          
+h2: .asciiz " and "
+h3: .asciiz " is "
+
+.text
+ li $s0, 5               # $s0 = 5
+ li $s1, 7               # $s1 = 7
+ add $s2, $s0, $s1       # $s2 = $s1 + $s2 = 12
+ 
+ li $v0, 4               # print tring
+ la $a0, h1              # in noi dung h1
+ syscall
+ 
+ li $v0, 1               # print so nguyen
+ move $a0, $s0           # gan $a0 = $s0
+ syscall                 # in $s0
+
+ li $v0, 4               # print tring
+ la $a0, h2              # in noi dung h2
+ syscall
+ 
+ li $v0, 1               # print so nguyen
+ move $a0, $s1           # gan $a0 = $s1
+ syscall                 # in $s1
+ 
+ li $v0, 4               # print tring
+ la $a0, h3              # in noi dung h3
+ syscall
+ 
+ li $v0, 1               # print so nguyen
+ move $a0, $s2           # gan $a0 = $s2
+ syscall                 # in tong cua 2 so ban dau
+ 
+ 
+ 
+ 

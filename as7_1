@@ -1,0 +1,29 @@
+.data
+M1: .asciiz "Nhap so: "
+M2: .asciiz "Tri tuyet doi: "
+.text
+main: 
+	li $v0, 4
+	la $a0, M1
+	syscall			# in chuoi M1
+	li $v0, 5
+	syscall			# nhap so nguyen
+	move $a1, $v0 
+	li $v0, 4
+	la $a0, M2		# in chuoi M2
+	syscall			
+ 	jal abs 			#jump va link toi abs
+ 	nop
+ 	add $a0, $zero, $v0	# $a0 = $v0 la gia tri tuyet doi
+	li $v0, 1
+	syscall			# in gia tri tuyet doi
+	li $v0, 10		# exit
+	syscall
+endmain:
+abs:
+ 	sub $v0,$zero,$a1 	# $v0 = - $a1, neu $a1 <0
+ 	bltz $a1,done 		# neu $a1 < 0 --> done
+ 	nop
+ 	add $v0,$a1,$zero 	# neu $a1 > 0 --> $v0 = $a1
+done:
+ 	jr $ra 			# nhay nguoc lai

@@ -1,0 +1,9 @@
+.text
+li $s1, 5
+li $s2, 7
+subu $s3, $s2, $s1
+bgez $s3, label
+j exit
+label:
+li $s0 , 10
+exit:

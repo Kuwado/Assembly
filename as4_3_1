@@ -1,0 +1,9 @@
+.text
+li $s1, -22          # load gia tri cho $s1
+bltz $s1, abS        # kiem tra dau, neu $s1 < 0 chuyen den abS
+add $s0, $zero, $s1  # Luu gia tri $s1 vao $s0 (neu $s1 > 0)
+j exit
+abS:
+subu $s0, $zero, $s1   # $s0 = 0 - $s1
+exit:
+ 
